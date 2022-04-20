@@ -1,0 +1,35 @@
+.border {
+  @apply fill-slate-300 dark:fill-slate-700;
+}
+
+.accent {
+  @apply fill-emerald-800;
+}
+
+.component {
+  @apply fill-slate-700;
+}
+
+.lines {
+  @apply fill-slate-600;
+}
+
+.screen {
+  @apply fill-white dark:fill-slate-900;
+}
+
+.accent2 {
+  @apply fill-slate-700;
+}
+
+.ground {
+  @apply fill-slate-300 dark:fill-slate-900;
+}
+
+.speechBubble {
+  @apply fill-slate-400;
+}
+
+.speechLine {
+  @apply fill-slate-200;
+}

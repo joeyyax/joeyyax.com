@@ -1,0 +1,11 @@
+@tailwind components;
+
+@layer components {
+  .nav {
+    @apply flex flex-col gap-4;
+
+    .navItem {
+      @apply font-medium text-slate-400 hover:text-slate-500 focus:text-slate-500;
+    }
+  }
+}

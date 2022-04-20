@@ -1,9 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
-  padding: 0;
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  @apply min-h-screen;
+  @apply bg-slate-200 bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-900 dark:to-slate-800;
+}
+
+#__next {
+  @apply flex flex-col;
+  @apply min-h-screen;
+  @apply items-center;
+}
+
+#main {
+  @apply flex flex-col;
+  @apply w-full;
+  @apply items-center gap-8;
+
+  min-height: calc(100vh - 6rem);  
 }
 
 a {
@@ -11,6 +30,28 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+main a:not(.unstyled-link):not(.branding):not(.btn):not(.nav-item) {
+  @apply text-action;
+  @apply relative;
+  @apply transition-all duration-300 ease-in-out;
+
+  &::before {
+    content: "";
+    @apply absolute bottom-0 left-0;
+    @apply w-full h-[2px] rounded bg-action-600;
+
+    @apply transition-transform duration-300 ease-in-out origin-right scale-x-0;
+  }
+
+  &:hover {
+    @apply text-action-600;
+    &:before {
+      @apply origin-left scale-x-100;
+    }
+  }
+
+  &:active {
+    @apply text-indigo-600;
+    @apply transform translate-y-[2px];
+  }
 }
