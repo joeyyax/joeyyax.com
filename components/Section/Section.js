@@ -11,7 +11,11 @@ const Section = ({ type, name, className, children }) => {
     <DynamicType
       data-name={name}
       id={name}
-      className={classNames(name, "flex justify-center w-full", className)}
+      className={classNames(
+        name,
+        "flex justify-center w-full lg:px-4",
+        className
+      )}
     >
       {children}
     </DynamicType>

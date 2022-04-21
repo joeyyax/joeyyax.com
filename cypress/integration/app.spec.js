@@ -3,7 +3,7 @@
 // Navbar
 describe("Navigation", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000");
+    cy.visit("/");
     cy.get("body").should("have.class", "page-transition--complete");
   });
 
@@ -20,7 +20,7 @@ describe("Navigation", () => {
 // Footer
 describe("Footer", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000");
+    cy.visit("/");
     cy.get("body").should("have.class", "page-transition--complete");
   });
 

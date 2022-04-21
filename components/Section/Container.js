@@ -5,7 +5,7 @@ const Container = ({ className, columns, children }) => {
   return (
     <div
       className={classNames(
-        "container flex gap-8 p-4 lg:p-16 rounded-lg items-center",
+        "container flex w-full gap-8 p-4 lg:p-16 rounded-lg items-center",
         className
       )}
     >
