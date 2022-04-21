@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test dev http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless"
   },
   "dependencies": {
     "classnames": "^2.3.1",
@@ -18,11 +22,13 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",
+    "cypress": "^9.5.4",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
     "postcss": "^8.4.12",
     "postcss-import": "^14.1.0",
     "postcss-nesting": "^10.1.4",
+    "start-server-and-test": "^1.14.0",
     "tailwindcss": "^3.0.24"
   }
 }

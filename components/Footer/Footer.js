@@ -4,10 +4,14 @@ import Section from "../Section/Section";
 import Socials from "../Socials/Socials";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <Section type="footer" name="footer" className="">
       <Section.Container className="flex-col lg:flex-row lg:py-8 text-slate-600 justify-between border-t border-dotted border-slate-400 dark:border-slate-700">
-        <div>&copy; 2022 Joey Yax. All rights reserved.</div>
+        <div className="copyright">
+          &copy; {currentYear} Joey Yax. All rights reserved.
+        </div>
         <Socials />
       </Section.Container>
     </Section>
