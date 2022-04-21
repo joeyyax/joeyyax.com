@@ -12,6 +12,18 @@ const Hero = () => {
   const [activeTitleEl, setActiveTitleEl] = useState(0);
   const [simulateError, setSimulateError] = useState(false);
 
+  const handleButtonClick = () => {
+    window?.dataLayer?.push({
+      event: "event",
+      eventProps: {
+        category: "Contact",
+        action: "Email",
+        label: "Get In Touch",
+        value: 1,
+      },
+    });
+  };
+
   useEffect(() => {
     // count spans in title
     const spans = refTitle.current.querySelectorAll("span");
@@ -103,7 +115,9 @@ const Hero = () => {
             </p>
           </div>
           <div>
-            <Button href="mailto:joey@joeyyax.com">Get in touch</Button>
+            <Button href="mailto:joey@joeyyax.com" onClick={handleButtonClick}>
+              Get in touch
+            </Button>
           </div>
         </div>
         <div className="hidden lg:flex supporting-image w-full lg:w-3/5">
