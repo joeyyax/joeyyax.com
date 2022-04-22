@@ -15,6 +15,7 @@ const nextConfig = {
   },
   images: {
     domains: ["static.joeyyax.com", "www.joeyyax.com"],
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // async rewrites() {
   // return [
