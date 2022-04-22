@@ -1,4 +1,4 @@
-import Section from "../components/Section/Section";
+import Section from "components/Section/Section"
 
 const Error404 = () => {
   return (
@@ -263,7 +263,7 @@ const Error404 = () => {
         </svg>
       </Section.Container>
     </Section>
-  );
-};
+  )
+}
 
-export default Error404;
+export default Error404

@@ -1,10 +1,10 @@
 // import PropTypes from "prop-types";
-import Link from "next/link";
+import Link from "next/link"
 import {
   FaGithub as GitHubIcon,
   FaTwitter as TwitterIcon,
   FaLinkedin as LinkedInIcon,
-} from "react-icons/fa";
+} from "react-icons/fa"
 
 const Socials = () => {
   const items = [
@@ -23,7 +23,7 @@ const Socials = () => {
       href: "https://twitter.com/joeyyax",
       icon: <TwitterIcon />,
     },
-  ];
+  ]
 
   return (
     <div className="socials flex flex-row gap-4 text-2xl">
@@ -35,11 +35,11 @@ const Socials = () => {
         </Link>
       ))}
     </div>
-  );
-};
+  )
+}
 
 // Socials.propTypes = {};
 
 // Socials.defaultProps = {};
 
-export default Socials;
+export default Socials

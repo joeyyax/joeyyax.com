@@ -1,7 +1,7 @@
 {
-	"extends": [
-		// "eslint:recommended",
-		"next",
-		"prettier"
-	]
+  "extends": [
+    // "eslint:recommended",
+    "next",
+    "prettier"
+  ]
 }

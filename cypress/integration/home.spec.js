@@ -2,25 +2,27 @@
 
 context("Home Page", () => {
   beforeEach(() => {
-    cy.visit("/");
-    cy.get("body").should("have.class", "page-transition--complete");
-  });
+    cy.visit("/")
+  })
 
-  // it("page transition started", () => {
-  //   cy.get("body").should("have.class", "page-transition--in-progress");
-  //   cy.screenshot();
-  // });
+  it("takes screenshot of different viewport sizes", () => {
+    // wait for page transition to complete
+    cy.get("body").should("have.class", "page-transition--complete")
 
-  it("page transition completed", () => {
-    cy.get("body").should("have.class", "page-transition--complete");
-    cy.screenshot();
-  });
+    // desktop screenshot
+    cy.viewport("macbook-15")
+    cy.screenshot("desktop")
 
-  it("should contain an h1", () => {
-    cy.get("h1");
-  });
+    // tablet screenshot
+    cy.viewport("ipad-2")
+    cy.screenshot("tablet")
 
-  it("should contain link to joey@joeyyax.com", () => {
-    cy.get('a[href*="mailto:joey@joeyyax.com"]');
-  });
-});
+    // mobile screenshot
+    cy.viewport("iphone-x")
+    cy.screenshot("mobile")
+  })
+
+  it(`should contain link to joey@joeyyax.com`, () => {
+    cy.get('a[href*="mailto:joey@joeyyax.com"]')
+  })
+})

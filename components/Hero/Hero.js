@@ -1,16 +1,16 @@
-import { useRef, useEffect, useState } from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import Section from "../../components/Section/Section";
-import Button from "../Button/Button";
-import classNames from "classnames";
+import { useRef, useEffect, useState } from "react"
+import Link from "next/link"
+import { motion } from "framer-motion"
+import Section from "components/Section/Section"
+import Button from "../Button/Button"
+import classNames from "classnames"
 
-import styles from "./Hero.module.css";
+import styles from "./Hero.module.css"
 
 const Hero = () => {
-  const refTitle = useRef();
-  const [activeTitleEl, setActiveTitleEl] = useState(0);
-  const [simulateError, setSimulateError] = useState(false);
+  const refTitle = useRef()
+  const [activeTitleEl, setActiveTitleEl] = useState(0)
+  const [simulateError, setSimulateError] = useState(false)
 
   const handleButtonClick = () => {
     window?.dataLayer?.push({
@@ -21,15 +21,15 @@ const Hero = () => {
         label: "Get In Touch",
         value: 1,
       },
-    });
-  };
+    })
+  }
 
   useEffect(() => {
     // count spans in title
-    const spans = refTitle.current.querySelectorAll("span");
+    const spans = refTitle.current.querySelectorAll("span")
 
     const timeout = setTimeout(() => {
-      setSimulateError(false);
+      setSimulateError(false)
 
       // randomly set simulateError to true
       // if (activeTitleEl == 0) {
@@ -46,14 +46,14 @@ const Hero = () => {
 
       // start over if we reach the end
       if (activeTitleEl + 1 === spans.length) {
-        return setActiveTitleEl(-1);
+        return setActiveTitleEl(-1)
       }
 
-      setActiveTitleEl((i) => i + 1);
-    }, 1500);
+      setActiveTitleEl((i) => i + 1)
+    }, 1500)
 
-    return () => clearTimeout(timeout);
-  }, [activeTitleEl]);
+    return () => clearTimeout(timeout)
+  }, [activeTitleEl])
 
   return (
     <Section name="hero">
@@ -115,7 +115,10 @@ const Hero = () => {
             </p>
           </div>
           <div>
-            <Button href="mailto:joey@joeyyax.com" onClick={handleButtonClick}>
+            <Button
+              href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+              onClick={handleButtonClick}
+            >
               Get in touch
             </Button>
           </div>
@@ -483,7 +486,7 @@ const Hero = () => {
         </div>
       </Section.Container>
     </Section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

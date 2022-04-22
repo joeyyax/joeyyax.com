@@ -1,53 +1,46 @@
 {
-	"name": "joeyyax",
-	"version": "0.1.0",
-	"private": false,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint",
-		"cypress": "cypress open",
-		"cypress:save": "cypress open --record --key f2f7d7f2-28e8-482a-b2d1-283cd795ac54",
-		"cypress:headless": "cypress run",
-		"cypress:headless:save": "cypress run --record --key f2f7d7f2-28e8-482a-b2d1-283cd795ac54",
-		"e2e": "start-server-and-test dev http://localhost:3000 cypress",
-		"e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless",
-		"prepare": "husky install",
-		"format": "prettier --write .",
-		"analyze": "ANALYZE=true next build",
-		"precommit": "lint-staged"
-	},
-	"lint-staged": {
-		"**/*.{js,ts,json,md,yml,css}": [
-			"prettier --write"
-		],
-		"**/*.{js,ts}": [
-			"next lint"
-		]
-	},
-	"dependencies": {
-		"@next/bundle-analyzer": "^12.1.5",
-		"classnames": "^2.3.1",
-		"framer-motion": "^6.3.0",
-		"next": "12.1.5",
-		"react": "18.0.0",
-		"react-dom": "18.0.0",
-		"react-icons": "^4.3.1"
-	},
-	"devDependencies": {
-		"autoprefixer": "^10.4.4",
-		"cypress": "^9.5.4",
-		"eslint": "8.13.0",
-		"eslint-config-next": "12.1.5",
-		"eslint-config-prettier": "^8.5.0",
-		"husky": "^7.0.4",
-		"lint-staged": "^12.4.0",
-		"postcss": "^8.4.12",
-		"postcss-import": "^14.1.0",
-		"postcss-nesting": "^10.1.4",
-		"prettier": "^2.6.2",
-		"start-server-and-test": "^1.14.0",
-		"tailwindcss": "^3.0.24"
-	}
+  "name": "joeyyax",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "cypress": "cypress open",
+    "cypress.save": "cypress open --record --key f2f7d7f2-28e8-482a-b2d1-283cd795ac54",
+    "cypress.headless": "cypress run",
+    "cypress.headless:save": "cypress run --record --key f2f7d7f2-28e8-482a-b2d1-283cd795ac54",
+    "e2e": "start-server-and-test dev http://localhost:3000 cypress",
+    "e2e.headless": "start-server-and-test dev http://localhost:3000 cypress.headless",
+    "prepare": "husky install",
+    "prettier": "prettier --write .",
+    "analyze": "ANALYZE=true next build",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^12.1.5",
+    "classnames": "^2.3.1",
+    "framer-motion": "^6.3.0",
+    "next": "12.1.5",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-icons": "^4.3.1",
+    "react-schemaorg": "^2.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "cypress": "^9.5.4",
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.5",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.0",
+    "postcss": "^8.4.12",
+    "postcss-import": "^14.1.0",
+    "postcss-nesting": "^10.1.4",
+    "prettier": "^2.6.2",
+    "start-server-and-test": "^1.14.0",
+    "tailwindcss": "^3.0.24"
+  }
 }

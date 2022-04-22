@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
-import Link from "next/link";
-import classNames from "classnames";
+import PropTypes from "prop-types"
+import Link from "next/link"
+import classNames from "classnames"
 
 const Branding = () => {
   return (
@@ -9,11 +9,11 @@ const Branding = () => {
         Joey Yax
       </a>
     </Link>
-  );
-};
+  )
+}
 
-Branding.propTypes = {};
+Branding.propTypes = {}
 
-Branding.defaultProps = {};
+Branding.defaultProps = {}
 
-export default Branding;
+export default Branding

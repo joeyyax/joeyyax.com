@@ -1,11 +1,11 @@
-import PropTypes from "prop-types";
-import dynamic from "next/dynamic";
-import classNames from "classnames";
+import PropTypes from "prop-types"
+import dynamic from "next/dynamic"
+import classNames from "classnames"
 
-const Container = dynamic(() => import("./Container"));
+const Container = dynamic(() => import("./Container"))
 
 const Section = ({ type, name, className, children }) => {
-  const DynamicType = type;
+  const DynamicType = type
 
   return (
     <DynamicType
@@ -19,23 +19,23 @@ const Section = ({ type, name, className, children }) => {
     >
       {children}
     </DynamicType>
-  );
-};
+  )
+}
 
-Section.Container = Container;
+Section.Container = Container
 
 Section.propTypes = {
   type: PropTypes.oneOf(["header", "section", "aside", "div", "footer"]),
   name: PropTypes.string,
   className: PropTypes.any,
   children: PropTypes.node.isRequired,
-};
+}
 
 Section.defaultProps = {
   type: "section",
   name: undefined,
   className: undefined,
   children: undefined,
-};
+}
 
-export default Section;
+export default Section

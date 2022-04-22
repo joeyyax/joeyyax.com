@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
-import Link from "next/link";
-import classNames from "classnames";
-import Branding from "../Branding/Branding";
-import Section from "../Section/Section";
+import PropTypes from "prop-types"
+import Link from "next/link"
+import classNames from "classnames"
+import Branding from "components/Branding/Branding"
+import Section from "components/Section/Section"
 
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.css"
 
 const Navbar = () => {
   return (
@@ -16,17 +16,17 @@ const Navbar = () => {
       <Section.Container className="justify-between items-center">
         <Branding />
         <nav className={classNames("nav", styles.nav)}>
-          {/* <Link href="/about">
-            <a className={classNames("nav-item", styles.navItem)}>About</a>
-          </Link> */}
+          {/* <Link href='/about'>
+						<a className={classNames('nav-item', styles.navItem)}>About</a>
+					</Link> */}
         </nav>
       </Section.Container>
     </Section>
-  );
-};
+  )
+}
 
-Navbar.propTypes = {};
+Navbar.propTypes = {}
 
-Navbar.defaultProps = {};
+Navbar.defaultProps = {}
 
-export default Navbar;
+export default Navbar

@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import Section from "../Section/Section";
-import Socials from "../Socials/Socials";
+import PropTypes from "prop-types"
+import classNames from "classnames"
+import Section from "../Section/Section"
+import Socials from "../Socials/Socials"
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   return (
     <Section type="footer" name="footer" className="">
@@ -15,11 +15,11 @@ const Footer = () => {
         <Socials />
       </Section.Container>
     </Section>
-  );
-};
+  )
+}
 
-Footer.propTypes = {};
+Footer.propTypes = {}
 
-Footer.defaultProps = {};
+Footer.defaultProps = {}
 
-export default Footer;
+export default Footer
