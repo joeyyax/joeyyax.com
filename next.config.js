@@ -18,12 +18,7 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // async rewrites() {
-  // return [
-  // {
-  // 	source: '/sitemap.xml',
-  // 	destination: '/api/sitemap',
-  // },
-  // ]
+  // return []
   // },
   // async redirects() {
   // 	return []
