@@ -1,1 +1,13 @@
-module.exports = {};
+module.exports = {
+	endOfLine: 'lf',
+	printWidth: 80,
+	trailingComma: 'es5',
+	semi: false,
+	jsxSingleQuote: true,
+	singleQuote: true,
+	useTabs: true,
+	tabWidth: 2,
+	arrowParens: 'always',
+	bracketSpacing: true,
+	bracketSameLine: false,
+}
