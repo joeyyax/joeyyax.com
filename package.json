@@ -1,7 +1,21 @@
 {
   "name": "joeyyax",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
+  "homepage": "https://www.joeyyax.com",
+  "author": {
+    "name": "Joey Yax",
+    "email": "joey@joeyyax.com",
+    "url": "https://www.joeyyax.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joeyyax/joeyyax.com"
+  },
+  "bugs": {
+    "url": "https://github.com/joeyyax/joeyyax.com/issues",
+    "email": "joey@joeyyax.com"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
