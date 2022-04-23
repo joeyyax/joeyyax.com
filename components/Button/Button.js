@@ -3,7 +3,7 @@ import Link from "next/link"
 import classNames from "classnames"
 import styles from "./Button.module.css"
 
-const Button = ({ href, onClick, logEvent, children }) => {
+const Button = ({ href, onClick, className, logEvent, children }) => {
   const handleClick = (e) => {
     if (logEvent) {
       window?.dataLayer?.push({
@@ -24,7 +24,10 @@ const Button = ({ href, onClick, logEvent, children }) => {
 
   return (
     <Link href={href} passHref>
-      <a className={classNames("btn", styles.btn)} onClick={handleClick}>
+      <a
+        className={classNames("btn", styles.btn, className)}
+        onClick={handleClick}
+      >
         {children}
       </a>
     </Link>
@@ -34,6 +37,7 @@ const Button = ({ href, onClick, logEvent, children }) => {
 Button.propTypes = {
   href: PropTypes.string,
   onClick: PropTypes.func,
+  className: PropTypes.string,
   logEvent: PropTypes.shape({
     category: PropTypes.string,
     action: PropTypes.string,
@@ -46,6 +50,7 @@ Button.propTypes = {
 Button.defaultProps = {
   href: "/",
   onClick: undefined,
+  className: undefined,
   logEvent: false,
   children: "",
 }

@@ -77,6 +77,7 @@ export default function Home() {
             <div>
               <Button
                 href="mailto:joey@joeyyax.com"
+                className="umami--click--get-in-touch-hero-button"
                 logEvent={{
                   category: "Hero Button",
                   label: "Get In Touch",
