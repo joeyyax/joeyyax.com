@@ -70,7 +70,7 @@ const Hero = () => {
               className={classNames(
                 "transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br",
                 activeTitleEl != 0 &&
-                  "from-slate-600 to-slate-800 dark:from-slate-200",
+                  "from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600",
                 activeTitleEl == 0 && styles.active,
                 activeTitleEl == 0 && "from-yellow-300 to-orange-600 "
               )}
@@ -82,7 +82,7 @@ const Hero = () => {
               className={classNames(
                 "transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br",
                 activeTitleEl != 1 &&
-                  "from-slate-600 to-slate-800 dark:from-slate-200",
+                  "from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600",
                 activeTitleEl == 1 && styles.active,
                 activeTitleEl == 1 &&
                   simulateError &&
@@ -99,7 +99,7 @@ const Hero = () => {
               className={classNames(
                 "transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br",
                 activeTitleEl != 2 &&
-                  "from-slate-600 to-slate-800 dark:from-slate-200",
+                  "from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600",
                 activeTitleEl == 2 && styles.active,
                 activeTitleEl == 2 && "from-indigo-400 to-emerald-600"
               )}
