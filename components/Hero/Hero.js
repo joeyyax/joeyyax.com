@@ -1,111 +1,48 @@
 import { useRef, useEffect, useState } from "react"
-import Link from "next/link"
-import { motion } from "framer-motion"
 import Section from "components/Section/Section"
-import Button from "../Button/Button"
+import Button from "components/Button/Button"
+import Cycle from "components/Cycle/Cycle"
 import classNames from "classnames"
 
 import styles from "./Hero.module.css"
 
 const Hero = () => {
-  const refTitle = useRef()
-  const [activeTitleEl, setActiveTitleEl] = useState(0)
-  const [simulateError, setSimulateError] = useState(false)
-
-  const handleButtonClick = () => {
-    window?.dataLayer?.push({
-      event: "event",
-      eventProps: {
-        category: "Contact",
-        action: "Email",
-        label: "Get In Touch",
-        value: 1,
-      },
-    })
-  }
-
-  useEffect(() => {
-    // count spans in title
-    const spans = refTitle.current.querySelectorAll("span")
-
-    const timeout = setTimeout(() => {
-      setSimulateError(false)
-
-      // randomly set simulateError to true
-      // if (activeTitleEl == 0) {
-      //   const isError = Math.random() > 0.7;
-      //   if (isError) {
-      //     setSimulateError(isError);
-      //     clearTimeout(timeout);
-      //     setTimeout(() => {
-      //       setActiveTitleEl(-1);
-      //       return;
-      //     }, 1500);
-      //   }
-      // }
-
-      // start over if we reach the end
-      if (activeTitleEl + 1 === spans.length) {
-        return setActiveTitleEl(-1)
-      }
-
-      setActiveTitleEl((i) => i + 1)
-    }, 1500)
-
-    return () => clearTimeout(timeout)
-  }, [activeTitleEl])
-
   return (
     <Section name="hero">
       <Section.Container className="flex-col lg:flex-row lg:bg-slate-200 lg:dark:bg-slate-800 relative overflow-y-hidden">
         <div className="body flex flex-col w-full lg:w-2/5 gap-6">
           <h1
-            ref={refTitle}
             className={classNames(
-              styles.title,
               "font-extrabold text-6xl lg:text-8xl leading-none uppercase -mb-2"
             )}
           >
-            <span
-              className={classNames(
-                "transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br",
-                activeTitleEl != 0 &&
-                  "from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600",
-                activeTitleEl == 0 && styles.active,
-                activeTitleEl == 0 && "from-yellow-300 to-orange-600 "
-              )}
-            >
-              Build.
-            </span>
-            <br />
-            <span
-              className={classNames(
-                "transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br",
-                activeTitleEl != 1 &&
-                  "from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600",
-                activeTitleEl == 1 && styles.active,
-                activeTitleEl == 1 &&
-                  simulateError &&
-                  "from-orange-600 to-red-800",
-                activeTitleEl == 1 &&
-                  !simulateError &&
-                  "from-orange-600 to-indigo-600"
-              )}
-            >
-              Test.
-            </span>
-            <br />
-            <span
-              className={classNames(
-                "transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br",
-                activeTitleEl != 2 &&
-                  "from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600",
-                activeTitleEl == 2 && styles.active,
-                activeTitleEl == 2 && "from-indigo-400 to-emerald-600"
-              )}
-            >
-              Deploy.
-            </span>
+            <Cycle speed={1500}>
+              <Cycle.String
+                id={1}
+                base="flex w-full transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
+                inactive="from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600"
+                active="from-yellow-300 to-orange-600"
+              >
+                Build.
+              </Cycle.String>
+              <Cycle.String
+                id={2}
+                base="flex w-full transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
+                inactive="from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600"
+                active="from-orange-600 to-red-800"
+                error="from-orange-600 to-indigo-600"
+              >
+                Ship.
+              </Cycle.String>
+              <Cycle.String
+                id={3}
+                base="flex w-full transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
+                inactive="from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600"
+                active="from-indigo-400 to-emerald-600"
+              >
+                Deploy.
+              </Cycle.String>
+            </Cycle>
           </h1>
           <div className="text-xl leading-relaxed text-slate-600 dark:text-slate-300">
             <p>
@@ -115,7 +52,14 @@ const Hero = () => {
             </p>
           </div>
           <div>
-            <Button href="mailto:joey@joeyyax.com" onClick={handleButtonClick}>
+            <Button
+              href="mailto:joey@joeyyax.com"
+              logEvent={{
+                category: "Hero Button",
+                label: "Get In Touch",
+                value: 1,
+              }}
+            >
               Get in touch
             </Button>
           </div>
