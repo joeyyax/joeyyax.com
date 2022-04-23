@@ -11,7 +11,7 @@ const Navbar = () => {
     <Section
       name="navbar"
       type="header"
-      className="flex w-full h-16 lg:h-24 items-center border-b lg:border-b-0 border-dotted border-slate-300"
+      className="flex w-full h-16 lg:h-24 items-center border-b lg:border-b-0 border-dotted border-slate-300 dark:border-slate-800"
     >
       <Section.Container className="justify-between items-center">
         <Branding />
