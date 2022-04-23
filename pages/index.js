@@ -42,7 +42,7 @@ export default function Home() {
               <Cycle speed={1500} startAt={0}>
                 <Cycle.String
                   id={0}
-                  base="flex w-full transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
+                  base="block transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
                   inactive="from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600"
                   active="from-yellow-300 to-orange-600"
                 >
@@ -50,7 +50,7 @@ export default function Home() {
                 </Cycle.String>
                 <Cycle.String
                   id={1}
-                  base="flex w-full transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
+                  base="block transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
                   inactive="from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600"
                   active="from-orange-600 to-red-800"
                   error="from-orange-600 to-indigo-600"
@@ -59,7 +59,7 @@ export default function Home() {
                 </Cycle.String>
                 <Cycle.String
                   id={2}
-                  base="flex w-full transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
+                  base="block transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
                   inactive="from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600"
                   active="from-indigo-400 to-emerald-600"
                 >
