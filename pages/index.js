@@ -12,7 +12,7 @@ export default function Home() {
       addressRegion: "OR",
       postalCode: "97266",
     },
-    email: `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`,
+    email: "mailto:joey@joeyyax.com",
     jobTitle: "Full-stack web developer",
     name: "Joey Yax",
     telephone: "(503) 706-5054",

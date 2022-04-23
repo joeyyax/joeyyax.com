@@ -115,10 +115,7 @@ const Hero = () => {
             </p>
           </div>
           <div>
-            <Button
-              href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-              onClick={handleButtonClick}
-            >
+            <Button href="mailto:joey@joeyyax.com" onClick={handleButtonClick}>
               Get in touch
             </Button>
           </div>
