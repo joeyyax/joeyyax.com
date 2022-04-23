@@ -39,9 +39,9 @@ export default function Home() {
                 "font-extrabold text-6xl lg:text-8xl leading-none uppercase -mb-2"
               )}
             >
-              <Cycle speed={1500}>
+              <Cycle speed={1500} startAt={0}>
                 <Cycle.String
-                  id={1}
+                  id={0}
                   base="flex w-full transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
                   inactive="from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600"
                   active="from-yellow-300 to-orange-600"
@@ -49,7 +49,7 @@ export default function Home() {
                   Build.
                 </Cycle.String>
                 <Cycle.String
-                  id={2}
+                  id={1}
                   base="flex w-full transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
                   inactive="from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600"
                   active="from-orange-600 to-red-800"
@@ -58,7 +58,7 @@ export default function Home() {
                   Ship.
                 </Cycle.String>
                 <Cycle.String
-                  id={3}
+                  id={2}
                   base="flex w-full transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
                   inactive="from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600"
                   active="from-indigo-400 to-emerald-600"
