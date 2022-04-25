@@ -8,7 +8,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <GoogleTagManager.NoScript />
+        {/* <GoogleTagManager.NoScript /> */}
       </body>
     </Html>
   )

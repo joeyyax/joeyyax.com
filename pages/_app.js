@@ -41,7 +41,7 @@ function App({ Component, pageProps }) {
         data-website-id="cdd4b521-137c-439f-9196-cb2b88da4fae"
         src="https://analytics.joeyyax.com/umami.js"
       />
-      <GoogleTagManager.Script />
+      {/* <GoogleTagManager.Script /> */}
       <Navbar />
       <PageTransitionWrapper>
         <Component {...pageProps} />
