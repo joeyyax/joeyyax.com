@@ -32,7 +32,7 @@ export default function Home() {
         structuredData={structuredData}
       />
       <Section name="hero">
-        <Section.Container className="flex-col lg:flex-row lg:bg-slate-200 lg:dark:bg-slate-800 relative overflow-y-hidden">
+        <Section.Container className="flex-col lg:flex-row bg-slate-100 dark:bg-slate-900 relative overflow-y-hidden">
           <div className="body flex flex-col w-full lg:w-2/5 gap-6">
             <h1
               className={classNames(
@@ -52,8 +52,8 @@ export default function Home() {
                   id={1}
                   base="block transition-all ease-in-out text-transparent bg-clip-text bg-gradient-to-br"
                   inactive="from-slate-600 to-slate-800 dark:from-slate-500 dark:to-slate-600"
-                  active="from-orange-600 to-red-800"
-                  error="from-orange-600 to-indigo-600"
+                  active="from-orange-600 to-indigo-600"
+                  error="from-orange-600 to-red-800"
                 >
                   Ship.
                 </Cycle.String>

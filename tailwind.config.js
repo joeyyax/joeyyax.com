@@ -9,11 +9,98 @@ module.exports = {
     extend: {
       colors: {
         action: {
-          DEFAULT: colors.teal["600"],
-          600: colors.teal["700"],
+          default: colors.sky["600"],
+          base: colors.sky["600"],
+          hover: colors.sky["700"],
+        },
+      },
+      typography: {
+        default: {
+          css: {
+            h1: {
+              marginBottom: "1rem",
+            },
+            h2: {
+              marginTop: "2rem",
+              marginBottom: "1rem",
+            },
+            h3: {
+              marginBottom: "1rem",
+            },
+            h4: {
+              marginBottom: "1rem",
+            },
+            h5: {
+              marginBottom: "1rem",
+            },
+            h6: {
+              marginBottom: "1rem",
+            },
+            a: {
+              textDecoration: "none",
+            },
+            p: {
+              marginTop: "0.5rem",
+              marginBottom: "0.5rem",
+            },
+            ul: {
+              marginTop: "0.5rem",
+              marginBottom: "0.5rem",
+            },
+            ol: {
+              marginTop: "0.5rem",
+              marginBottom: "0.5rem",
+            },
+            li: {
+              marginTop: "0.25rem",
+              marginBottom: "0.25rem",
+            },
+          },
+        },
+        lg: {
+          css: {
+            h1: {
+              marginBottom: "1rem",
+            },
+            h2: {
+              marginTop: "2rem",
+              marginBottom: "1rem",
+            },
+            h3: {
+              marginBottom: "1rem",
+            },
+            h4: {
+              marginBottom: "1rem",
+            },
+            h5: {
+              marginBottom: "1rem",
+            },
+            h6: {
+              marginBottom: "1rem",
+            },
+            a: {
+              textDecoration: "none",
+            },
+            p: {
+              marginTop: "0.5rem",
+              marginBottom: "0.5rem",
+            },
+            ul: {
+              marginTop: "0.5rem",
+              marginBottom: "0.5rem",
+            },
+            ol: {
+              marginTop: "0.5rem",
+              marginBottom: "0.5rem",
+            },
+            li: {
+              marginTop: "0.25rem",
+              marginBottom: "0.25rem",
+            },
+          },
         },
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 }

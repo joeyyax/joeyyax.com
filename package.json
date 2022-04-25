@@ -2,6 +2,7 @@
   "name": "joeyyax",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "homepage": "https://www.joeyyax.com",
   "author": {
     "name": "Joey Yax",
@@ -45,6 +46,7 @@
     "react-schemaorg": "^2.0.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.4",
     "cypress": "^9.5.4",
     "eslint": "8.14.0",

@@ -7,9 +7,9 @@ const Footer = () => {
 
   return (
     <Section type="footer" name="footer" className="">
-      <Section.Container className="mt-4 flex-col lg:flex-row lg:py-8 text-slate-600 justify-between border-t border-dotted border-slate-400 dark:border-slate-700">
-        <div className="copyright">
-          Contents of this site are &copy; {currentYear} Joey Yax. All rights
+      <Section.Container className="flex-col lg:flex-row lg:py-8 text-slate-500 dark:text-slate-500 justify-between">
+        <div className="legal text-xs leading-relaxed">
+          Contents of this website are &copy; {currentYear} Joey Yax. All rights
           reserved.
           {` `}
           <Link href="/privacy-policy">

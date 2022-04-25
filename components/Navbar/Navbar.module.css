@@ -2,7 +2,7 @@
 
 @layer components {
   .nav {
-    @apply flex flex-col gap-4;
+    @apply flex flex-row gap-8 items-center;
 
     .navItem {
       @apply font-medium text-slate-400 hover:text-slate-500 focus:text-slate-500;

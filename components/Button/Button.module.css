@@ -4,7 +4,10 @@
   .btn {
     @apply inline-flex py-3 px-6 rounded-lg;
     @apply text-lg font-semibold text-white;
-    @apply bg-gradient-to-br from-slate-900 to-slate-800 hover:from-slate-700 hover:to-slate-900;
-    @apply dark:to-slate-900 dark:hover:from-slate-700 dark:hover:to-slate-700;
+    @apply bg-slate-800  hover:bg-slate-900;
+    @apply hover:bg-action-hover;
+    /* @apply dark:bg-action dark:to-action dark:hover:from-action-hover dark:hover:to-action-hover; */
+
+    @apply transform transition-all duration-200 ease-in-out hover:scale-105 hover:drop-shadow-md;
   }
 }

@@ -13,7 +13,7 @@ const Section = ({ type, name, className, children }) => {
       id={name}
       className={classNames(
         name,
-        "flex justify-center w-full lg:px-4",
+        "flex justify-center w-full lg:px-4 px-2",
         className
       )}
     >

@@ -11,14 +11,14 @@ const Navbar = () => {
     <Section
       name="navbar"
       type="header"
-      className="flex w-full h-16 lg:h-24 items-center border-b lg:border-b-0 border-dotted border-slate-300 dark:border-slate-800"
+      className="flex w-full h-32 -mb-10 lg:h-60 lg:-mb-28 items-start border-b border-slate-300 dark:border-slate-800"
     >
-      <Section.Container className="justify-between items-center">
+      <Section.Container className="h-20 lg:h-32 xl:py-8 justify-between items-center">
         <Branding />
         <nav className={classNames("nav", styles.nav)}>
-          {/* <Link href='/about'>
-						<a className={classNames('nav-item', styles.navItem)}>About</a>
-					</Link> */}
+          {/* <Link href="/about">
+            <a className={classNames("nav-item", styles.navItem)}>About</a>
+          </Link> */}
         </nav>
       </Section.Container>
     </Section>

@@ -1,0 +1,23 @@
+.social {
+  @apply transition-all duration-200 ease-in-out;
+  &:hover {
+  }
+}
+
+.github {
+  &:hover {
+    @apply text-slate-900 dark:text-slate-400;
+  }
+}
+
+.linkedin {
+  &:hover {
+    color: #0077b5;
+  }
+}
+
+.twitter {
+  &:hover {
+    color: #1da1f2;
+  }
+}
