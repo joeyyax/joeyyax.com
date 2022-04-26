@@ -28,27 +28,27 @@ export default function PrivacyPolicy() {
               is used to track overall visitor trends.
             </p>
             <h2>Visitor Privacy</h2>
-            <p>Only the following mertrics are collected:</p>
+            <p>Only the following metrics are collected:</p>
             <ul>
               <li>Referrer</li>
               <li>Page Views</li>
               <li>Country</li>
-              <li>Operating system name, version and vendor</li>
-              <li>Browser name, version and vendor</li>
+              <li>Operating system name, version, and vendor</li>
+              <li>Browser name, version, and vendor</li>
               <li>Device type</li>
             </ul>
             <p>
               <strong>
-                The goal here is to track trends not to identify you.
+                The goal here is to track trends, not to identify you.
               </strong>{" "}
-              Data is anonymized and in aggregate-form only. Tracking is per
+              Data is anonymized and in aggregate form only. Tracking is per
               device and does not track you across any other websites. No
-              cookies or other persistent identifiers are used.
+              cookies or other persistent identifiers are in use.
             </p>
             <h2>Licenses</h2>
             <p>
-              Contents of this website are &copy; {currentYear} Joey Yax. All
-              rights reserved.
+              The contents of this website are &copy; {currentYear} Joey Yax.
+              All rights reserved.
             </p>
             <p>
               <a
@@ -94,7 +94,7 @@ export default function PrivacyPolicy() {
             </p> */}
             <h2>Copyright Infringement</h2>
             <p>
-              If anything on this website uses, misrepresents or links to
+              If anything on this website uses, misrepresents, or links to
               material you own or represent, please{" "}
               <Link href="/contact">
                 <a className="umami--click--let-me-know-infringement">

@@ -72,7 +72,7 @@ export default function Home() {
               <p>
                 I&apos;m Joey, a full-stack web developer based in Portland, OR.
                 I work with brands and businesses of all sizes to create modern,
-                engaging and thoughtful web experiences.
+                engaging, and thoughtful web experiences.
               </p>
             </div>
             <div>

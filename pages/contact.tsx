@@ -14,8 +14,8 @@ export default function Contact() {
           <div className="body flex flex-col w-full prose prose-slate lg:prose-lg dark:prose-invert">
             <h1>👋 Let&apos;s chat!</h1>
             <p className="text-xl">
-              Whether you are interested in starting a project, or just saying
-              &quot;hi&quot; I&apos;d love to hear from you. In most cases I can
+              Whether you are interested in starting a project or just saying,
+              &quot;Hi,&quot; I&apos;d love to hear from you. Typically, I can
               get back to you within one business day.
             </p>
 

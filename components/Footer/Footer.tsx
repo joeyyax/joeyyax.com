@@ -9,8 +9,8 @@ const Footer = () => {
     <Section el="footer" name="footer" className="">
       <Section.Container className="flex-col lg:flex-row lg:py-8 text-slate-500 dark:text-slate-300 justify-between">
         <div className="legal text-xs leading-relaxed">
-          Contents of this website are &copy; {currentYear} Joey Yax. All rights
-          reserved.
+          The contents of this website are &copy; {currentYear} Joey Yax. All
+          rights reserved.
           <br />
           <a
             href="https://github.com/joeyyax/joeyyax.com"
