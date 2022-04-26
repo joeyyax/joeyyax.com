@@ -34,3 +34,7 @@ yarn-error.log*
 #these are generated at build time
 /public/robots.txt
 /public/sitemap*.xml
+
+# ignore cypress screenshots and videos
+/cypress/screenshots/*
+/cypress/videos/*
