@@ -1,3 +1,4 @@
+import { AppProps } from "next/app"
 import dynamic from "next/dynamic"
 import Head from "next/head"
 import Script from "next/script"
@@ -9,7 +10,7 @@ const Footer = dynamic(() => import("components/Footer/Footer"))
 
 import "../styles/globals.css"
 
-function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
