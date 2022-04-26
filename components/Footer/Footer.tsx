@@ -27,7 +27,13 @@ const Footer = () => {
           >
             MIT license
           </a>
-          .
+          .{" "}
+          {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA && (
+            <>
+              Current Build:{" "}
+              {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA?.slice(-7)}
+            </>
+          )}
           <br />
           <Link href="/disclaimer">
             <a>Disclaimer</a>
