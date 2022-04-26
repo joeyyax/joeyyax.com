@@ -1,3 +1,4 @@
+import Link from "next/link"
 import SEO from "lib/SEO"
 import Section from "components/Section/Section"
 
@@ -95,12 +96,11 @@ export default function PrivacyPolicy() {
             <p>
               If anything on this website uses, misrepresents or links to
               material you own or represent, please{" "}
-              <a
-                href="/contact"
-                className="umami--click--let-me-know-infringement"
-              >
-                let me know
-              </a>
+              <Link href="/contact">
+                <a className="umami--click--let-me-know-infringement">
+                  let me know
+                </a>
+              </Link>
               .
             </p>
           </div>
