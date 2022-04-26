@@ -11,7 +11,7 @@ const Navbar = () => {
     <Section
       name="navbar"
       el="header"
-      className="flex w-full h-32 -mb-10 lg:h-60 lg:-mb-28 items-start border-b border-slate-300 dark:border-slate-800"
+      className="flex w-full h-32 -mb-10 lg:h-60 lg:-mb-28 items-start "
     >
       <Section.Container className="h-20 lg:h-32 xl:py-8 justify-between items-center">
         <Branding />
