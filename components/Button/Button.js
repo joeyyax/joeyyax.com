@@ -28,7 +28,7 @@ const Button = ({ href, onClick, className, logEvent, children }) => {
         className={classNames("btn", styles.btn, className)}
         onClick={handleClick}
       >
-        {children}
+        <span>{children}</span>
       </a>
     </Link>
   )
