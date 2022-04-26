@@ -4,11 +4,11 @@ import classNames from "classnames"
 
 const Container = dynamic(() => import("./Container"))
 
-const Section = ({ type, name, className, children }) => {
-  const DynamicType = type
+const Section = ({ el, name, className, children }) => {
+  const ElementType = el
 
   return (
-    <DynamicType
+    <ElementType
       data-name={name}
       id={name}
       className={classNames(
@@ -18,21 +18,21 @@ const Section = ({ type, name, className, children }) => {
       )}
     >
       {children}
-    </DynamicType>
+    </ElementType>
   )
 }
 
 Section.Container = Container
 
 Section.propTypes = {
-  type: PropTypes.oneOf(["header", "section", "aside", "div", "footer"]),
+  el: PropTypes.oneOf(["header", "section", "aside", "div", "footer"]),
   name: PropTypes.string,
   className: PropTypes.any,
   children: PropTypes.node.isRequired,
 }
 
 Section.defaultProps = {
-  type: "section",
+  el: "section",
   name: undefined,
   className: undefined,
   children: undefined,

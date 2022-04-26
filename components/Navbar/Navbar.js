@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <Section
       name="navbar"
-      type="header"
+      el="header"
       className="flex w-full h-32 -mb-10 lg:h-60 lg:-mb-28 items-start border-b border-slate-300 dark:border-slate-800"
     >
       <Section.Container className="h-20 lg:h-32 xl:py-8 justify-between items-center">
