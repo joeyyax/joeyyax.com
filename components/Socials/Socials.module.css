@@ -1,7 +1,12 @@
 .social {
+  @apply inline-flex flex-row gap-2 items-center;
   @apply transition-all duration-200 ease-in-out;
   &:hover {
   }
+}
+
+.name {
+  @apply text-sm;
 }
 
 .github {

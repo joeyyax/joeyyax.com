@@ -1,3 +1,4 @@
+import Link from "next/link"
 import SEO from "lib/SEO"
 import Section from "components/Section/Section"
 
@@ -7,8 +8,8 @@ export default function PrivacyPolicy() {
   return (
     <>
       <SEO title="Joey Yax - Privacy Policy" />
-      <Section name="hero">
-        <Section.Container className="flex-col lg:flex-row bg-slate-100 dark:bg-slate-800 relative w-[80ch] drop-shadow-2xl">
+      <Section name="disclaimer">
+        <Section.Container className="flex-col lg:flex-row bg-slate-100 dark:bg-slate-800 relative w-[80ch]">
           <div className="body flex flex-col prose prose-slate lg:prose-lg dark:prose-invert">
             <h1>Disclaimer</h1>
             <p>
@@ -95,7 +96,12 @@ export default function PrivacyPolicy() {
             <p>
               If anything on this website uses, misrepresents or links to
               material you own or represent, please{" "}
-              <a href="mailto:joey+copyright@joeyyax.com">let me know</a>.
+              <Link href="/contact">
+                <a className="umami--click--let-me-know-infringement">
+                  let me know
+                </a>
+              </Link>
+              .
             </p>
           </div>
         </Section.Container>
