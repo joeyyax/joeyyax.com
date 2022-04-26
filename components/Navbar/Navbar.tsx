@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import Link from "next/link"
 import classNames from "classnames"
 import Branding from "components/Branding/Branding"
@@ -24,9 +23,5 @@ const Navbar = () => {
     </Section>
   )
 }
-
-Navbar.propTypes = {}
-
-Navbar.defaultProps = {}
 
 export default Navbar
