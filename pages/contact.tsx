@@ -33,7 +33,7 @@ export default function Contact() {
 
             <h2>Find me on socials too</h2>
             <p>I don&apos;t post often, but I do monitor them:</p>
-            <Socials withNames className="mt-4" />
+            <Socials withNames exclude="github" className="mt-4" />
           </div>
         </Section.Container>
       </Section>

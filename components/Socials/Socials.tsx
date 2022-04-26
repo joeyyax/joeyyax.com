@@ -11,10 +11,12 @@ import styles from "./Socials.module.css"
 interface Props {
   withNames?: boolean
   className?: string
+  include?: Array<string> | string
+  exclude?: Array<string> | string
 }
 
-const Socials = ({ withNames = false, className }: Props) => {
-  const items = [
+const Socials = ({ withNames = false, include, exclude, className }: Props) => {
+  let items = [
     {
       name: "GitHub",
       slug: "github",
@@ -34,6 +36,24 @@ const Socials = ({ withNames = false, className }: Props) => {
       icon: <TwitterIcon />,
     },
   ]
+
+  if (include) {
+    // if include isn't an array, make it one
+    if (typeof include === "string") {
+      include = [include]
+    }
+
+    items = items.filter((item) => include.includes(item.slug))
+  }
+
+  if (exclude) {
+    // if exclude isn't an array, make it one
+    if (typeof exclude === "string") {
+      exclude = [exclude]
+    }
+
+    items = items.filter((item) => !exclude.includes(item.slug))
+  }
 
   return (
     <div
