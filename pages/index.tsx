@@ -77,7 +77,7 @@ export default function Home() {
             </div>
             <div>
               <Button
-                href="mailto:joey@joeyyax.com"
+                href="/contact"
                 className="umami--click--get-in-touch-hero-button"
               >
                 Get in touch

@@ -8,7 +8,12 @@ import {
 
 import styles from "./Socials.module.css"
 
-const Socials = () => {
+interface Props {
+  withNames?: boolean
+  className?: string
+}
+
+const Socials = ({ withNames = false, className }: Props) => {
   const items = [
     {
       name: "GitHub",
@@ -19,7 +24,7 @@ const Socials = () => {
     {
       name: "LinkedIn",
       slug: "linkedin",
-      href: "https://www.linkedin.com/in/joey-yax-a0a9b11a4/",
+      href: "https://www.linkedin.com/in/joeyyax",
       icon: <LinkedInIcon />,
     },
     {
@@ -31,7 +36,12 @@ const Socials = () => {
   ]
 
   return (
-    <div className="socials flex flex-row gap-4 text-2xl">
+    <div
+      className={classNames(
+        "socials flex flex-row gap-4 text-2xl",
+        className && className
+      )}
+    >
       {items.map(({ name, slug, href, icon }) => (
         <Link href={href} passHref key={name}>
           <a
@@ -45,7 +55,7 @@ const Socials = () => {
             title={name}
             target="_blank"
           >
-            {icon}
+            {icon} {withNames && <span className={styles.name}>{name}</span>}
           </a>
         </Link>
       ))}

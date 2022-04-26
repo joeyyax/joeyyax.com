@@ -3,9 +3,9 @@
 @layer components {
   .btn {
     @apply inline-flex py-3 px-6 rounded-lg;
-    @apply text-lg font-semibold text-white;
+    @apply text-lg font-semibold;
     @apply bg-slate-800  hover:bg-slate-900;
-    @apply hover:bg-action-hover;
+    @apply hover:bg-action-hover hover:text-slate-100;
     /* @apply dark:bg-action dark:to-action dark:hover:from-action-hover dark:hover:to-action-hover; */
 
     @apply transform transition-all duration-200 ease-in-out hover:scale-105 hover:drop-shadow-md;
@@ -14,7 +14,16 @@
     @apply overflow-hidden;
 
     span {
-      @apply relative z-10;
+      @apply inline-flex gap-2 items-center;
+      @apply relative z-10 text-white;
+      @apply transition-all duration-200 ease-in-out;
+    }
+
+    &:hover {
+      @apply text-white;
+      span {
+        @apply text-white;
+      }
     }
 
     &::before {
@@ -26,7 +35,6 @@
     }
 
     &:hover {
-      @apply text-slate-100;
       &:before {
         @apply origin-left scale-x-100;
       }
@@ -34,6 +42,38 @@
 
     &:active {
       @apply transform translate-y-[2px] scale-100;
+    }
+  }
+
+  .primary {
+    @apply bg-action-base;
+    @apply hover:bg-action-hover;
+
+    span {
+      @apply text-white;
+      &:hover {
+        @apply text-white;
+      }
+    }
+
+    &::before {
+      @apply bg-action-hover;
+    }
+  }
+
+  .light {
+    @apply bg-slate-300 dark:bg-slate-900;
+    @apply hover:bg-action-hover;
+
+    span {
+      @apply text-slate-700;
+      &:hover {
+        @apply text-white;
+      }
+    }
+
+    &::before {
+      @apply bg-action-hover;
     }
   }
 }
