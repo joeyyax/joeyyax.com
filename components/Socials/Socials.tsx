@@ -1,4 +1,3 @@
-// import PropTypes from "prop-types";
 import classNames from "classnames"
 import Link from "next/link"
 import {
@@ -53,9 +52,5 @@ const Socials = () => {
     </div>
   )
 }
-
-// Socials.propTypes = {};
-
-// Socials.defaultProps = {};
 
 export default Socials

@@ -1,7 +1,11 @@
-import PropTypes from "prop-types"
 import classNames from "classnames"
 
-const Container = ({ className, columns, children }) => {
+interface Props {
+  className?: string
+  children: any
+}
+
+const Container = ({ className, children }: Props) => {
   const defaultWidth = "w-full"
   const classes = className.split(" ")
 
@@ -21,16 +25,6 @@ const Container = ({ className, columns, children }) => {
       {children}
     </div>
   )
-}
-
-Container.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-}
-
-Container.defaultProps = {
-  className: undefined,
-  children: undefined,
 }
 
 export default Container

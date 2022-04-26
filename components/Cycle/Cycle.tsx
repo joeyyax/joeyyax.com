@@ -1,10 +1,15 @@
 import React, { useRef, useEffect, useState } from "react"
-import PropTypes from "prop-types"
 import CycleString from "./CycleString"
-import react from "react"
 
-const Cycle = ({ startAt, speed, className, children }) => {
-  const wrapper = useRef()
+interface Props {
+  startAt?: number
+  speed?: number
+  className?: string
+  children: any
+}
+
+const Cycle = ({ startAt, speed = 1500, className, children }: Props) => {
+  const wrapper = useRef(null)
   const [active, setActive] = useState(startAt)
 
   useEffect(() => {
@@ -40,17 +45,5 @@ const Cycle = ({ startAt, speed, className, children }) => {
 }
 
 Cycle.String = CycleString
-
-Cycle.propTypes = {
-  speed: PropTypes.number,
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-}
-
-Cycle.defaultProps = {
-  speed: 1500,
-  className: undefined,
-  children: undefined,
-}
 
 export default Cycle

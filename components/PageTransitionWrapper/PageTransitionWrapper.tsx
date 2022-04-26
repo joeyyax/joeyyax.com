@@ -1,7 +1,11 @@
 import { useRouter } from "next/router"
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion"
 
-function PageTransitionWrapper({ children }) {
+interface Props {
+  children: any
+}
+
+const PageTransitionWrapper = ({ children }: Props) => {
   const router = useRouter()
 
   const pageTransitionProps = {

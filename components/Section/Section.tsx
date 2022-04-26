@@ -1,10 +1,18 @@
-import PropTypes from "prop-types"
 import dynamic from "next/dynamic"
 import classNames from "classnames"
 
 const Container = dynamic(() => import("./Container"))
 
-const Section = ({ el, name, className, children }) => {
+type ElementTypes = "header" | "section" | "aside" | "div" | "footer"
+
+interface Props {
+  el?: ElementTypes
+  name?: string
+  className?: string
+  children: any
+}
+
+const Section = ({ el = "section", name, className, children }: Props) => {
   const ElementType = el
 
   return (
@@ -23,19 +31,5 @@ const Section = ({ el, name, className, children }) => {
 }
 
 Section.Container = Container
-
-Section.propTypes = {
-  el: PropTypes.oneOf(["header", "section", "aside", "div", "footer"]),
-  name: PropTypes.string,
-  className: PropTypes.any,
-  children: PropTypes.node.isRequired,
-}
-
-Section.defaultProps = {
-  el: "section",
-  name: undefined,
-  className: undefined,
-  children: undefined,
-}
 
 export default Section

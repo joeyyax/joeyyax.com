@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import Link from "next/link"
 import classNames from "classnames"
 
@@ -17,9 +16,5 @@ const Branding = () => {
     </Link>
   )
 }
-
-Branding.propTypes = {}
-
-Branding.defaultProps = {}
 
 export default Branding

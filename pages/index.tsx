@@ -2,13 +2,14 @@ import Section from "components/Section/Section"
 import Button from "components/Button/Button"
 import Cycle from "components/Cycle/Cycle"
 import classNames from "classnames"
+import { Person, WithContext } from "schema-dts"
 
 import SEO from "lib/SEO"
 
 import styles from "./index.module.css"
 
 export default function Home() {
-  const structuredData = {
+  const structuredData: WithContext<Person> = {
     "@context": "https://schema.org",
     "@type": "Person",
     address: {
@@ -78,11 +79,6 @@ export default function Home() {
               <Button
                 href="mailto:joey@joeyyax.com"
                 className="umami--click--get-in-touch-hero-button"
-                logEvent={{
-                  category: "Hero Button",
-                  label: "Get In Touch",
-                  value: 1,
-                }}
               >
                 Get in touch
               </Button>
