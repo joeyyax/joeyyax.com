@@ -17,7 +17,7 @@ const Container = ({ className, children }: Props) => {
   return (
     <div
       className={classNames(
-        "container flex gap-8 p-4 md:p-12 xl:p-16 rounded-lg items-center",
+        "container flex gap-8 p-4 md:p-12 rounded-lg items-center relative z-30",
         !widthClass ? defaultWidth : widthClass,
         className
       )}

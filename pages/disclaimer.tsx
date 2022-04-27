@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
     <>
       <SEO title="Joey Yax - Privacy Policy" />
       <Section name="disclaimer">
-        <Section.Container className="flex-col lg:flex-row bg-slate-100 dark:bg-slate-800 relative w-[80ch]">
+        <Section.Container className="flex-col lg:flex-row bg-white dark:bg-slate-900 w-auto">
           <div className="body flex flex-col prose prose-slate lg:prose-lg dark:prose-invert">
             <h1>Disclaimer</h1>
             <p>

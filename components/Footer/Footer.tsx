@@ -6,8 +6,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <Section el="footer" name="footer" className="">
-      <Section.Container className="flex-col lg:flex-row lg:py-8 text-slate-500 dark:text-slate-300 justify-between">
+    <Section el="footer" name="footer">
+      <Section.Container className="flex-col lg:flex-row lg:py-8 text-slate-500 dark:text-slate-500 justify-between">
         <div className="legal text-xs leading-relaxed">
           The contents of this website are &copy; {currentYear} Joey Yax. All
           rights reserved.

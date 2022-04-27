@@ -1,4 +1,8 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
 const colors = require("tailwindcss/colors")
+
+let breakpoints = Object.assign({}, defaultTheme.screens)
+delete breakpoints["2xl"] // delete the 2xl breakpoint
 
 module.exports = {
   content: [
@@ -7,6 +11,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      container: {
+        screens: breakpoints,
+        center: true,
+      },
       colors: {
         action: {
           default: colors.sky["600"],

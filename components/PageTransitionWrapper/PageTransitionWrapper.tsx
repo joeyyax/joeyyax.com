@@ -9,7 +9,7 @@ const PageTransitionWrapper = ({ children }: Props) => {
   const router = useRouter()
 
   const pageTransitionProps = {
-    initial: { y: 100, scale: 1, opacity: 0 },
+    initial: { y: 200, scale: 0.8, opacity: 1 },
     animate: {
       y: 0,
       scale: 1,
@@ -46,7 +46,6 @@ const PageTransitionWrapper = ({ children }: Props) => {
       <LazyMotion features={domAnimation}>
         <m.main
           key={router.pathname}
-          layout
           id="main"
           variants={pageTransitionProps}
           initial="initial"

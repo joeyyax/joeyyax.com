@@ -11,9 +11,12 @@ const Navbar = () => {
     <Section
       name="navbar"
       el="header"
-      className="flex w-full h-32 -mb-10 lg:h-60 lg:-mb-28 items-star"
+      className={classNames(
+        "flex w-full h-20 lg:h-24 items-star z-50"
+        // "bg-slate-100 dark:bg-slate-800 bg-opacity-20 dark:bg-opacity-20 backdrop-blur"
+      )}
     >
-      <Section.Container className="h-20 lg:h-32 xl:py-8 justify-between items-center">
+      <Section.Container className="py-0 lg:py-0 justify-between items-center">
         <Branding />
         <nav className={classNames("nav", styles.nav)}>
           {/* <Link href="/about">

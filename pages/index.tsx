@@ -33,7 +33,7 @@ export default function Home() {
         structuredData={structuredData}
       />
       <Section name="hero">
-        <Section.Container className="flex-col lg:flex-row bg-slate-100 dark:bg-slate-900 relative overflow-y-hidden">
+        <Section.Container className="flex-col lg:flex-row bg-white dark:bg-slate-900 relative overflow-y-hidden">
           <div className="body flex flex-col w-full lg:w-2/5 gap-6">
             <h1
               className={classNames(

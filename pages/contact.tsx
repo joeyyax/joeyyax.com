@@ -10,7 +10,7 @@ export default function Contact() {
     <>
       <SEO title="Joey Yax - Get In Touch" />
       <Section name="contact">
-        <Section.Container className="flex-col bg-slate-100 dark:bg-slate-800 relative w-[90ch]">
+        <Section.Container className="flex-col bg-white dark:bg-slate-900 w-auto">
           <div className="body flex flex-col w-full prose prose-slate lg:prose-lg dark:prose-invert">
             <h1>👋 Let&apos;s chat!</h1>
             <p className="text-xl">

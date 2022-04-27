@@ -4,18 +4,18 @@
   .btn {
     @apply inline-flex py-3 px-6 rounded-lg;
     @apply text-lg font-semibold;
-    @apply bg-slate-800  hover:bg-slate-900;
+    @apply bg-slate-800 dark:bg-black;
     @apply hover:text-slate-100;
     /* @apply dark:bg-action dark:to-action dark:hover:from-action-hover dark:hover:to-action-hover; */
 
-    @apply transform transition-all duration-200 ease-in-out hover:scale-105 hover:drop-shadow-md;
+    @apply transform transition-all duration-200 ease-in-out hover:scale-105;
 
     @apply transition-all duration-300 ease-in-out;
     @apply overflow-hidden;
 
     span {
       @apply inline-flex gap-2 items-center;
-      @apply relative z-10 text-white;
+      @apply relative z-10 text-white dark:text-slate-200;
       @apply transition-all duration-200 ease-in-out;
     }
 
@@ -61,10 +61,10 @@
   }
 
   .light {
-    @apply bg-slate-300 dark:bg-slate-900;
+    @apply bg-slate-200 dark:bg-slate-900;
 
     span {
-      @apply text-slate-700 dark:text-slate-500;
+      @apply text-slate-600 dark:text-slate-300;
       &:hover {
         @apply text-white;
       }
