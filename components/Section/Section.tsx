@@ -1,32 +1,40 @@
 import dynamic from "next/dynamic"
 import classNames from "classnames"
+import { motion, Variants } from "framer-motion"
 
 const Container = dynamic(() => import("./Container"))
 
-type ElementTypes = "header" | "section" | "aside" | "div" | "footer"
-
 interface Props {
-  el?: ElementTypes
+  id?: string
   name?: string
   className?: string
+  animationVariants?: Variants
   children: any
 }
 
-const Section = ({ el = "section", name, className, children }: Props) => {
-  const ElementType = el
-
+const Section = ({
+  id,
+  name,
+  animationVariants,
+  className,
+  children,
+}: Props) => {
   return (
-    <ElementType
-      data-name={name}
-      id={name}
+    <motion.section
+      key={id || name}
+      id={id}
       className={classNames(
         name,
         "flex justify-center w-full lg:px-4 px-2",
         className
       )}
+      variants={animationVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
     >
       {children}
-    </ElementType>
+    </motion.section>
   )
 }
 

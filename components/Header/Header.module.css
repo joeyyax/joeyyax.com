@@ -1,0 +1,8 @@
+.section {
+}
+
+.container {
+  p {
+    @apply text-xl lg:text-3xl leading-normal max-w-[40ch];
+  }
+}

@@ -8,8 +8,15 @@ export default function PrivacyPolicy() {
   return (
     <>
       <SEO title="Joey Yax - Privacy Policy" />
-      <Section name="disclaimer">
-        <Section.Container className="flex-col lg:flex-row bg-white dark:bg-slate-900 w-auto">
+      <Section
+        name="disclaimer"
+        animationVariants={{
+          initial: { opacity: 0, y: 100 },
+          animate: { opacity: 1, y: 0 },
+          exit: { opacity: 0, y: 0 },
+        }}
+      >
+        <Section.Container className="my-8 flex-col lg:flex-row bg-white dark:bg-slate-800 w-auto drop-shadow-2xl">
           <div className="body flex flex-col prose prose-slate lg:prose-lg dark:prose-invert">
             <h1>Disclaimer</h1>
             <p>
@@ -19,8 +26,8 @@ export default function PrivacyPolicy() {
             <h2>General Data Protection</h2>
             <p>
               No cookies or other invasive tracking methods here. A self-hosted,{" "}
-              <dfn title="General Data Protection Regulation">GDPR</dfn>{" "}
-              compliant analytics tool called{" "}
+              <dfn title="General Data Protection Regulation">GDPR</dfn>
+              -compliant analytics tool called{" "}
               <a href="https://umami.is" target="_blank" rel="noreferrer">
                 Umami
               </a>

@@ -9,7 +9,7 @@ const PageTransitionWrapper = ({ children }: Props) => {
   const router = useRouter()
 
   const pageTransitionProps = {
-    initial: { y: 200, scale: 0.8, opacity: 1 },
+    initial: { y: 0, scale: 0, opacity: 1 },
     animate: {
       y: 0,
       scale: 1,

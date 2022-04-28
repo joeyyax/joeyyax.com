@@ -19,7 +19,7 @@ module.exports = {
         action: {
           default: colors.sky["600"],
           base: colors.sky["600"],
-          hover: colors.sky["700"],
+          hover: colors.sky["500"],
         },
       },
       typography: {
@@ -67,7 +67,9 @@ module.exports = {
         },
         lg: {
           css: {
+            maxWidth: "75ch",
             h1: {
+              fontSize: "3.75rem",
               marginBottom: "1rem",
             },
             h2: {
@@ -91,19 +93,19 @@ module.exports = {
             },
             p: {
               marginTop: "0.5rem",
-              marginBottom: "0.5rem",
+              marginBottom: "0.75rem",
             },
             ul: {
               marginTop: "0.5rem",
-              marginBottom: "0.5rem",
+              marginBottom: "0.75rem",
             },
             ol: {
               marginTop: "0.5rem",
-              marginBottom: "0.5rem",
+              marginBottom: "0.75rem",
             },
             li: {
-              marginTop: "0.25rem",
-              marginBottom: "0.25rem",
+              // marginTop: "0.25rem",
+              // marginBottom: "0.3rem",
             },
           },
         },

@@ -8,11 +8,19 @@ interface Props {
   href: string
   onClick?: Function
   theme?: Theme
+  lg?: boolean
   className?: string
   children: any
 }
 
-const Button = ({ href = "/", onClick, theme, className, children }: Props) => {
+const Button = ({
+  href = "/",
+  onClick,
+  theme,
+  lg,
+  className,
+  children,
+}: Props) => {
   const handleClick = (e) => {
     if (onClick) {
       onClick(e)
@@ -26,6 +34,7 @@ const Button = ({ href = "/", onClick, theme, className, children }: Props) => {
           "btn",
           styles.btn,
           theme && styles[theme],
+          lg && styles.lg,
           className
         )}
         onClick={handleClick}

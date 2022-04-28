@@ -6,6 +6,6 @@ describe("Footer", () => {
   })
 
   it("Disclaimer link is present", () => {
-    cy.get('footer a[href*="/disclaimer"]')
+    cy.get('#footer a[href*="/disclaimer"]')
   })
 })

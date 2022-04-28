@@ -2,7 +2,7 @@ import { AppProps } from "next/app"
 import dynamic from "next/dynamic"
 import Head from "next/head"
 import Script from "next/script"
-import PageTransitionWrapper from "components/PageTransitionWrapper/PageTransitionWrapper"
+import { AnimatePresence } from "framer-motion"
 
 import Navbar from "components/Navbar/Navbar"
 const Footer = dynamic(() => import("components/Footer/Footer"))
@@ -49,9 +49,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         src="https://analytics.joeyyax.com/umami.js"
       />
       <Navbar />
-      <PageTransitionWrapper>
-        <Component {...pageProps} />
-      </PageTransitionWrapper>
+      <AnimatePresence exitBeforeEnter>
+        <div id="main">
+          <Component {...pageProps} />
+        </div>
+      </AnimatePresence>
       <Footer />
     </>
   )

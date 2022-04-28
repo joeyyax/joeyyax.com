@@ -6,8 +6,22 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <Section el="footer" name="footer">
-      <Section.Container className="flex-col lg:flex-row lg:py-8 text-slate-500 dark:text-slate-500 justify-between">
+    <Section
+      name="footer"
+      id="footer"
+      animationVariants={{
+        initial: {
+          opacity: 0,
+        },
+        animate: {
+          opacity: 1,
+        },
+        exit: {
+          opacity: 1,
+        },
+      }}
+    >
+      <Section.Container className="flex-col lg:flex-row lg:py-8 text-slate-500 dark:text-slate-500 justify-between border-t border-slate-100 dark:border-slate-800 rounded-none self-end">
         <div className="legal text-xs leading-relaxed">
           The contents of this website are &copy; {currentYear} Joey Yax. All
           rights reserved.

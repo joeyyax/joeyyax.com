@@ -9,11 +9,11 @@ import styles from "./Navbar.module.css"
 const Navbar = () => {
   return (
     <Section
-      name="navbar"
-      el="header"
+      id="navbar"
       className={classNames(
-        "flex w-full h-20 lg:h-24 items-star z-50"
-        // "bg-slate-100 dark:bg-slate-800 bg-opacity-20 dark:bg-opacity-20 backdrop-blur"
+        "flex w-full h-20 lg:h-24 items-star z-50",
+        // "sticky top-0 border-b border-slate-100 dark:border-slate-900",
+        "bg-white dark:bg-slate-800 bg-opacity-20 dark:bg-opacity-20 backdrop-blur"
       )}
     >
       <Section.Container className="py-0 lg:py-0 justify-between items-center">
