@@ -42,12 +42,14 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
         <link key="safari-pinned-tab" rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff" /> */}
       </Head>
-      <Script
-        async
-        defer
-        data-website-id="cdd4b521-137c-439f-9196-cb2b88da4fae"
-        src="https://analytics.joeyyax.com/umami.js"
-      />
+      {process.env.NODE_ENV == "production" && (
+        <Script
+          async
+          defer
+          data-website-id="cdd4b521-137c-439f-9196-cb2b88da4fae"
+          src="https://analytics.joeyyax.com/umami.js"
+        />
+      )}
       <Navbar />
       <AnimatePresence exitBeforeEnter>
         <div id="main">

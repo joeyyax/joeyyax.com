@@ -58,7 +58,7 @@ const ContactForm = () => {
     // console.log(data, e)
     setIsSubmitting(true)
 
-    window.umami.trackEvent("submission succeeded", "contact form")
+    window?.umami?.trackEvent("submission succeeded", "contact form")
 
     const res = await sendEmail({
       to: "joey@joeyyax.com",
@@ -75,7 +75,7 @@ const ContactForm = () => {
   const onError: SubmitErrorHandler<Inputs> = async (errors, e) => {
     // console.log(errors, e)
 
-    window.umami.trackEvent("submission failed", "contact form")
+    window?.umami?.trackEvent("submission failed", "contact form")
 
     setIsSubmitting(false)
   }
