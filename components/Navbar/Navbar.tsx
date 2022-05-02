@@ -12,12 +12,16 @@ const Navbar = () => {
     <Section
       id="navbar"
       className={classNames(
-        "flex w-full h-20 lg:h-24 items-star z-50 overflow-hidden",
-        "sticky top-0 border-b border-slate-100 dark:border-slate-900",
+        "sticky top-0",
+        "h-20 lg:h-24 z-50 justify-center",
         "bg-white dark:bg-slate-800 bg-opacity-70 dark:bg-opacity-70 backdrop-blur"
       )}
     >
-      <Section.Container className="py-0 lg:py-0 justify-between items-center">
+      <Section.Container
+        stack={false}
+        gap="md"
+        className="flex-row gap-8 md:gap-8 lg:gap-8 justify-between items-center overflow-visible"
+      >
         <Branding />
         <NavbarTitle />
         <nav className={classNames("nav", styles.nav)}>

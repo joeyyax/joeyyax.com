@@ -1,5 +1,6 @@
 import Link from "next/link"
-import classNames from "classnames"
+import classNames from "classnames/dedupe"
+import { twMerge } from "tailwind-merge"
 import styles from "./Button.module.css"
 
 type Theme = "primary" | "secondary" | "light" | "dark"
@@ -9,6 +10,7 @@ interface Props {
   onClick?: Function
   theme?: Theme
   lg?: boolean
+  fill?: boolean
   className?: string
   children: any
 }
@@ -18,6 +20,7 @@ const Button = ({
   onClick,
   theme,
   lg,
+  fill = false,
   className,
   children,
 }: Props) => {
@@ -27,18 +30,20 @@ const Button = ({
     }
   }
 
+  const classes = twMerge(
+    classNames(
+      "btn",
+      styles.btn,
+      theme && styles[theme],
+      lg && styles.lg,
+      fill && styles.fill,
+      className
+    )
+  )
+
   return (
     <Link href={href} passHref>
-      <a
-        className={classNames(
-          "btn",
-          styles.btn,
-          theme && styles[theme],
-          lg && styles.lg,
-          className
-        )}
-        onClick={handleClick}
-      >
+      <a className={classes} onClick={handleClick}>
         <span>{children}</span>
       </a>
     </Link>

@@ -3,7 +3,7 @@ import Section from "components/Section/Section"
 const Error404 = () => {
   return (
     <Section name="error-404">
-      <Section.Container className="flex-col items-center">
+      <Section.Container stack center>
         <div className="flex flex-col gap-2 text-center">
           <h1 className="text-8xl font-bold leading-none text-slate-500">
             Error 500

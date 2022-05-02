@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react"
+import { Children, cloneElement, useRef, useEffect, useState } from "react"
 import CycleString from "./CycleString"
 
 interface Props {
@@ -14,7 +14,7 @@ const Cycle = ({ startAt, speed = 1500, className, children }: Props) => {
 
   useEffect(() => {
     // count spans in title
-    const items = wrapper.current.querySelectorAll("[data-cycle-item]")
+    const items = wrapper?.current.querySelectorAll("[data-cycle-item]")
 
     const timeout = setTimeout(() => {
       // start over if we reach the end
@@ -30,8 +30,8 @@ const Cycle = ({ startAt, speed = 1500, className, children }: Props) => {
 
   // get each child element and add active prop
 
-  const childrenWithActiveState = React.Children.map(children, (child, i) => {
-    return React.cloneElement(child, {
+  const childrenWithActiveState = Children.map(children, (child, i) => {
+    return cloneElement(child, {
       ...child.props,
       isActive: active === i,
     })

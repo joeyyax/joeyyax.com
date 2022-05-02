@@ -1,8 +1,18 @@
 .section {
+  &.overlap {
+    @apply pb-28 -mb-28;
+  }
 }
 
 .container {
   p {
-    @apply text-xl lg:text-3xl leading-normal max-w-[40ch];
+    @apply text-xl lg:text-3xl leading-normal lg:leading-normal max-w-[40ch];
   }
+}
+
+.title {
+}
+
+.body {
+  @apply opacity-70;
 }

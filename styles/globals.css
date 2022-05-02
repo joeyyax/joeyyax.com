@@ -30,6 +30,7 @@
   a {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
   }
 
   a:not(.unstyled):not(.branding):not(.btn):not(.nav-item):not(.social-icon) {
@@ -68,7 +69,7 @@
   h4,
   h5,
   h6 {
-    @apply font-extrabold leading-none;
+    @apply font-extrabold leading-none text-inherit;
   }
 
   h1 {
@@ -107,5 +108,49 @@
   }
 
   blockquote {
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    &-sm {
+      @apply py-4;
+    }
+
+    &-md {
+      @apply py-4 md:p-8 lg:p-16;
+    }
+
+    &-lg {
+      @apply py-8 md:p-12 lg:p-20;
+    }
+  }
+
+  .content-padding {
+    &-sm {
+      @apply p-4;
+    }
+
+    &-md {
+      @apply p-4 py-12 md:p-8 lg:p-16;
+    }
+
+    &-lg {
+      @apply p-8 py-20 md:p-16 lg:p-20;
+    }
+  }
+
+  .content-gap {
+    &-sm {
+      @apply gap-4;
+    }
+
+    &-md {
+      @apply gap-4 md:gap-8 lg:gap-12;
+    }
+
+    &-lg {
+      @apply gap-8 md:gap-12 lg:gap-20;
+    }
   }
 }

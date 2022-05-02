@@ -21,7 +21,10 @@ const Footer = () => {
         },
       }}
     >
-      <Section.Container className="flex-col lg:flex-row lg:py-8 text-slate-500 dark:text-slate-500 justify-between border-t border-slate-100 dark:border-slate-800 rounded-none self-end">
+      <Section.Container
+        stack={false}
+        className="rounded-none self-end justify-between text-slate-500 dark:text-slate-500 border-t border-slate-100 dark:border-slate-800"
+      >
         <div className="legal text-xs leading-relaxed">
           The contents of this website are &copy; {currentYear} Joey Yax. All
           rights reserved.

@@ -1,6 +1,5 @@
 import Section from "components/Section/Section"
 import Button from "components/Button/Button"
-import Cycle from "components/Cycle/Cycle"
 import classNames from "classnames"
 import { Person, WithContext } from "schema-dts"
 
@@ -33,9 +32,16 @@ export default function Home() {
         description="I work with brands and businesses of all sizes to create modern, engaging and thoughtful web experiences."
         structuredData={structuredData}
       />
-      <Section name="hero" className="self-center">
-        <Section.Container className="flex-col text-slate-600 relative overflow-y-hidden">
-          <h1 className={classNames("font-bold leading-tight")}>
+      <Section name="hero">
+        <Section.Container
+          stack
+          gap="md"
+          className="text-slate-600 relative overflow-y-hidden"
+        >
+          <h1
+            className={classNames("font-bold leading-tight")}
+            data-navbar-title-ignore="true"
+          >
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

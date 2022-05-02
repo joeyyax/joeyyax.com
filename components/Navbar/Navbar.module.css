@@ -5,7 +5,7 @@
     @apply flex flex-row gap-8 items-center;
 
     .navItem {
-      @apply font-medium text-slate-400 hover:text-slate-500 focus:text-slate-500;
+      @apply font-medium text-slate-700 hover:text-action-hover focus:text-slate-900;
     }
   }
 }

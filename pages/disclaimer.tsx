@@ -103,7 +103,7 @@ export default function PrivacyPolicy() {
             <p>
               If anything on this website uses, misrepresents, or links to
               material you own or represent, please{" "}
-              <Link href="/contact">
+              <Link href="/contact" passHref>
                 <a className="umami--click--let-me-know-infringement">
                   let me know
                 </a>

@@ -1,15 +1,12 @@
+import { Ref, forwardRef } from "react"
 import classNames from "classnames/dedupe"
 import { twMerge } from "tailwind-merge"
 import { motion, Variants } from "framer-motion"
 
-import dynamic from "next/dynamic"
-const SectionContainer = dynamic(() => import("./SectionContainer"))
-const SectionColumn = dynamic(() => import("./SectionColumn"))
-
 interface Props {
   id?: string
-  name?: string
   className?: string
+  center?: boolean
   padding?: "none" | "sm" | "md" | "lg"
   gap?: "none" | "sm" | "md" | "lg"
   animationVariants?: Variants
@@ -17,23 +14,27 @@ interface Props {
   [key: string]: any
 }
 
-const Section = ({
-  id,
-  name,
-  className,
-  padding = "none",
-  gap = "md",
-  animationVariants,
-  children,
-  ...props
-}: Props) => {
+const SectionColumn = (
+  {
+    id,
+    name,
+    className,
+    center = false,
+    padding = "sm",
+    gap = "sm",
+    animationVariants,
+    children,
+    ...props
+  }: Props,
+  ref: Ref<HTMLDivElement>
+) => {
   const classes = twMerge(
     classNames(
-      name,
-      "flex flex-col justify-start w-full px-2",
-      padding == "sm" && "section-padding-sm",
-      padding == "md" && "section-padding-md",
-      padding == "lg" && "section-padding-lg",
+      "flex flex-col w-full",
+      center ? "items-center" : "items-stretch",
+      padding == "sm" && "content-padding-sm",
+      padding == "md" && "content-padding-md",
+      padding == "lg" && "content-padding-lg",
       gap == "sm" && "content-gap-sm",
       gap == "md" && "content-gap-md",
       gap == "lg" && "content-gap-lg",
@@ -42,7 +43,8 @@ const Section = ({
   )
 
   return (
-    <motion.section
+    <motion.div
+      ref={ref}
       key={id || name}
       id={id}
       className={classes}
@@ -53,11 +55,8 @@ const Section = ({
       {...props}
     >
       {children}
-    </motion.section>
+    </motion.div>
   )
 }
 
-Section.Container = SectionContainer
-Section.Column = SectionColumn
-
-export default Section
+export default forwardRef(SectionColumn)

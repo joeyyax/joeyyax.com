@@ -1,17 +1,20 @@
 @tailwind components;
 
 @layer components {
-  .btn {
-    @apply inline-flex py-3 px-6 rounded-lg;
+  a.btn,
+  button.btn {
+    @apply inline-flex w-auto py-3 px-6 rounded-lg justify-center;
     @apply text-lg font-semibold;
     @apply bg-slate-800 dark:bg-black;
-    @apply hover:text-slate-100;
-    /* @apply dark:bg-action dark:to-action dark:hover:from-action-hover dark:hover:to-action-hover; */
 
     @apply transform transition-all duration-200 ease-in-out hover:scale-105;
 
     @apply transition-all duration-300 ease-in-out;
     @apply overflow-hidden;
+
+    &.fill {
+      @apply w-full;
+    }
 
     span {
       @apply inline-flex gap-2 items-center;
@@ -24,14 +27,7 @@
       @apply lg:text-2xl;
     }
 
-    &:hover {
-      @apply text-white;
-      span {
-        @apply text-white;
-      }
-    }
-
-    &::before {
+    &:before {
       content: "";
       @apply absolute bottom-0 left-0 z-0;
       @apply w-full h-full rounded-lg bg-action-hover;
@@ -40,6 +36,11 @@
     }
 
     &:hover {
+      @apply text-white;
+      span {
+        @apply text-white;
+      }
+
       &:before {
         @apply origin-left scale-x-100;
       }
@@ -48,35 +49,37 @@
     &:active {
       @apply transform translate-y-[2px] scale-100;
     }
-  }
 
-  .primary {
-    @apply bg-action-base;
+    &.primary {
+      @apply bg-action-base text-white;
 
-    span {
-      @apply text-white;
       &:hover {
-        @apply text-white;
+        span {
+          @apply text-white;
+        }
+      }
+
+      &::before {
+        @apply bg-action-hover;
       }
     }
 
-    &::before {
-      @apply bg-action-hover;
-    }
-  }
+    &.light {
+      @apply bg-slate-200 dark:bg-slate-900 bg-opacity-30;
 
-  .light {
-    @apply bg-slate-200 dark:bg-slate-900 bg-opacity-30;
-
-    span {
-      @apply text-slate-600 dark:text-slate-300;
-      &:hover {
-        @apply text-white;
+      span {
+        @apply text-slate-600 dark:text-slate-300;
       }
-    }
 
-    &::before {
-      @apply bg-action-hover;
+      &:hover {
+        span {
+          @apply text-white;
+        }
+      }
+
+      &::before {
+        @apply bg-action-hover;
+      }
     }
   }
 }
