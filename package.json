@@ -35,6 +35,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.8.8",
     "@next/bundle-analyzer": "^12.1.5",
     "classnames": "^2.3.1",
     "framer-motion": "^6.3.1",
@@ -42,9 +43,12 @@
     "next-sitemap": "^2.5.20",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "react-hook-form": "^7.30.0",
     "react-icons": "^4.3.1",
     "react-schemaorg": "^2.0.0",
-    "schema-dts": "^1.1.0"
+    "schema-dts": "^1.1.0",
+    "tailwind-merge": "^1.2.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",

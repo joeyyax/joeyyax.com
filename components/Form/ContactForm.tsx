@@ -1,117 +1,178 @@
+import { useState } from "react"
+import {
+  useForm,
+  Controller,
+  SubmitHandler,
+  SubmitErrorHandler,
+} from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+import sendEmail from "lib/sendEmail"
+import Form from "./Form"
+
+declare const window: any
+
+type Inputs = {
+  fname: string
+  lname: string
+  email: string
+  org: string
+  message: string
+}
+
+const requiredFields = yup
+  .object({
+    fname: yup
+      .string()
+      // .min(2, "Too short!")
+      // .max(50, "Too long!")
+      .required("What can I call you?"),
+    email: yup
+      .string()
+      .email("That doesn't look valid")
+      .required("I need your email to get back to you"),
+    message: yup.string().required("What's on your mind?"),
+    // .min(20, "Please elaborate...")
+    // .max(500, "Too long!")
+  })
+  .required()
+
 const ContactForm = () => {
-  return (
-    <form className="w-full">
-      <div className="flex flex-wrap mb-6">
-        <div className="w-full md:w-1/2 mb-6 md:mb-0">
-          <label
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="grid-first-name"
-          >
-            First Name
-          </label>
-          <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-first-name"
-            type="text"
-            placeholder="Jane"
-          />
-          <p className="text-red-500 text-xs italic">
-            Please fill out this field.
-          </p>
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const {
+    control,
+    // register,
+    handleSubmit,
+    // watch,
+    formState: { errors, touchedFields },
+  } = useForm<Inputs>({
+    mode: "all",
+    reValidateMode: "onChange",
+    criteriaMode: "firstError",
+    resolver: yupResolver(requiredFields),
+  })
+
+  const onSubmit: SubmitHandler<Inputs> = async (data, e) => {
+    // console.log(data, e)
+    setIsSubmitting(true)
+
+    window.umami.trackEvent("submission succeeded", "contact form")
+
+    const res = await sendEmail({
+      to: "joey@joeyyax.com",
+      from: data.email,
+      subject: "New message from joeyyax.com",
+      vars: { layout: "contact", ...data },
+    })
+
+    if (res?.success) {
+      setIsSuccess(true)
+      setIsSubmitting(false)
+    }
+  }
+  const onError: SubmitErrorHandler<Inputs> = async (errors, e) => {
+    // console.log(errors, e)
+
+    window.umami.trackEvent("submission failed", "contact form")
+
+    setIsSubmitting(false)
+  }
+
+  if (!isSuccess) {
+    return (
+      <Form onSubmit={handleSubmit(onSubmit, onError)}>
+        <Form.Row>
+          <Form.Column>
+            <Controller
+              name="fname"
+              control={control}
+              render={({ field }) => (
+                <Form.Input
+                  label="First Name"
+                  error={errors?.fname}
+                  valid={touchedFields.fname && !errors?.fname}
+                  {...field}
+                />
+              )}
+            />
+          </Form.Column>
+          <Form.Column>
+            <Controller
+              name="lname"
+              control={control}
+              render={({ field }) => (
+                <Form.Input
+                  label="Last Name"
+                  error={errors?.lname}
+                  valid={touchedFields.lname && !errors?.lname}
+                  {...field}
+                />
+              )}
+            />
+          </Form.Column>
+        </Form.Row>
+
+        <Controller
+          name="org"
+          control={control}
+          render={({ field }) => (
+            <Form.Input
+              label="Company"
+              placeholder="Acme, Inc."
+              error={errors?.org}
+              valid={touchedFields.org && !errors?.org}
+              {...field}
+            />
+          )}
+        />
+
+        <Controller
+          name="email"
+          control={control}
+          render={({ field }) => (
+            <Form.Input
+              type="email"
+              label="Email Address"
+              placeholder="you@domain.com"
+              helpText="I'll keep this between us"
+              error={errors?.email}
+              valid={touchedFields.email && !errors?.email}
+              {...field}
+            />
+          )}
+        />
+
+        <Controller
+          name="message"
+          control={control}
+          render={({ field }) => (
+            <Form.TextArea
+              label="Message"
+              error={errors?.message}
+              valid={touchedFields.message && !errors?.message}
+              {...field}
+            />
+          )}
+        />
+
+        <div className="flex gap-4 items-center">
+          <Form.Button theme="primary">Send message</Form.Button>
+          <Form.Status loading={isSubmitting} errors={errors} />
         </div>
-        <div className="w-full md:w-1/2">
-          <label
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="grid-last-name"
-          >
-            Last Name
-          </label>
-          <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-last-name"
-            type="text"
-            placeholder="Doe"
-          />
-        </div>
-      </div>
-      <div className="flex flex-wrap mb-6">
-        <div className="w-full">
-          <label
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="grid-password"
-          >
-            Password
-          </label>
-          <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-password"
-            type="password"
-            placeholder="******************"
-          />
-          <p className="text-gray-600 text-xs italic">
-            Make it as long and as crazy as you&apos;d like
-          </p>
-        </div>
-      </div>
-      <div className="flex flex-wrap mb-2">
-        <div className="w-full md:w-1/3 mb-6 md:mb-0">
-          <label
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="grid-city"
-          >
-            City
-          </label>
-          <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-city"
-            type="text"
-            placeholder="Albuquerque"
-          />
-        </div>
-        <div className="w-full md:w-1/3 mb-6 md:mb-0">
-          <label
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="grid-state"
-          >
-            State
-          </label>
-          <div className="relative">
-            <select
-              className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
-            >
-              <option>New Mexico</option>
-              <option>Missouri</option>
-              <option>Texas</option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <svg
-                className="fill-current h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div className="w-full md:w-1/3 mb-6 md:mb-0">
-          <label
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="grid-zip"
-          >
-            Zip
-          </label>
-          <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-zip"
-            type="text"
-            placeholder="90210"
-          />
-        </div>
-      </div>
-    </form>
-  )
+      </Form>
+    )
+  } else {
+    return (
+      <Form.ThankYou>
+        <p>I&apos;ll be in touch soon</p>
+        <p className="text-sm opacity-50">
+          Expect a reply within one business day
+        </p>
+      </Form.ThankYou>
+    )
+  }
 }
 
 export default ContactForm
