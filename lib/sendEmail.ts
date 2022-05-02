@@ -14,7 +14,7 @@ const sendEmail = async ({ to, from, subject, vars }: Props) => {
   const body = JSON.stringify({ to, from, subject, vars })
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_NOTIFICATIONS_API_URL}/v1/email/send`,
+    `${process.env.NEXT_PUBLIC_NOTIFICATIONS_API_URL}/email/send`,
     {
       method: "POST",
       mode: "cors",
