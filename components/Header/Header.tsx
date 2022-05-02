@@ -32,10 +32,6 @@ const Header = ({ id, name, overlap = false, className, children }: Props) => {
         },
         animate: {
           opacity: 1,
-          transition: {
-            type: "tween",
-            staggerChildren: 1,
-          },
         },
       }}
     >
