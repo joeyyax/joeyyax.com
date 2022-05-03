@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
@@ -18,7 +16,8 @@ jobs:
           browser: chrome
           headless: true
           record: false
-        # env:
+        env:
+          NOTIFICATIONS_API_URL: ${{ secrets.NOTIFICATIONS_API_URL }}
         # CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}

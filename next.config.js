@@ -33,9 +33,14 @@ const nextConfig = {
     domains: ["static.joeyyax.com", "www.joeyyax.com"],
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  // async rewrites() {
-  // return []
-  // },
+  async rewrites() {
+    return [
+      {
+        source: "/api/notifications/:path*",
+        destination: `${process.env.NOTIFICATIONS_API_URL}/:path*`,
+      },
+    ]
+  },
   // async redirects() {
   // 	return []
   // },
