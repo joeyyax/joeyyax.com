@@ -46,7 +46,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <Script
           async
           defer
-          data-website-id="cdd4b521-137c-439f-9196-cb2b88da4fae"
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
           src="https://analytics.joeyyax.com/umami.js"
         />
       )}
