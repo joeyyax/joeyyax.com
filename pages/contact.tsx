@@ -25,7 +25,7 @@ export default function Contact() {
         <Section.Container
           gap="none"
           padding="none"
-          className="bg-white dark:bg-slate-800 border border-slate-100"
+          className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-800 overflow-hidden"
         >
           <Section.Column padding="md" className="lg:w-3/4">
             <ContactForm />

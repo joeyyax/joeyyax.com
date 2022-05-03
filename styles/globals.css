@@ -20,7 +20,7 @@
   }
 
   #main {
-    @apply flex flex-col relative grow;
+    @apply flex flex-col relative grow mb-4;
     @apply w-full;
     @apply items-center;
   }

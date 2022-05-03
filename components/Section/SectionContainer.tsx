@@ -29,7 +29,7 @@ const Container = (
 ) => {
   const classes = twMerge(
     classNames(
-      "container flex rounded-xl relative z-30 overflow-hidden w-full",
+      "container flex rounded-xl relative z-30 w-full",
       stack && "flex-col",
       !stack && "flex-col lg:flex-row lg:flex-row",
       center ? "items-center" : "items-stretch",
