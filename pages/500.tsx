@@ -9,7 +9,7 @@ const Error404 = () => {
             Error 500
           </h1>
           <p className="uppercase text-sm leading-none text-slate-500">
-            A server-side error has occured
+            A server-side error has occurred
           </p>
         </div>
         <svg
