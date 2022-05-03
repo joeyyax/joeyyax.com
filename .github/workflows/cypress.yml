@@ -8,16 +8,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          runTests: false
           build: npm run build
           start: npm run start
           browser: chrome
           headless: true
-          record: false
+          record: true
+          parallel: true
         env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NOTIFICATIONS_API_URL: ${{ secrets.NOTIFICATIONS_API_URL }}
-        # CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
