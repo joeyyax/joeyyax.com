@@ -12,16 +12,18 @@ const FormThankYou = dynamic(() => import("../Form/FormThankYou"))
 import styles from "./Form.module.css"
 
 interface Props {
+  name: string
   className?: string
   children: any
   onSubmit: any
   [key: string]: any
 }
 
-const Form = ({ className, children, onSubmit, ...props }: Props) => {
+const Form = ({ name, className, children, onSubmit, ...props }: Props) => {
   return (
     <form
-      className={classNames(styles.form, className)}
+      name={name}
+      className={classNames(name, styles.form, className)}
       onSubmit={onSubmit}
       {...props}
     >

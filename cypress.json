@@ -2,5 +2,7 @@
   "baseUrl": "http://localhost:3000",
   "projectId": "ccyqvo",
   "viewportWidth": 1280,
-  "viewportHeight": 800
+  "viewportHeight": 800,
+  "integrationFolder": ".",
+  "testFiles": "{cypress,pages,components,lib}/**/*.spec.js"
 }

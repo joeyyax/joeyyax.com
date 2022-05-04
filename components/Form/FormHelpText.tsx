@@ -15,7 +15,7 @@ const FormHelpText = ({ text, hide = false }: Props) => {
     <motion.span
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className={styles.helpText}
+      className={`form-helptext ${styles.helpText}`}
     >
       {text}
     </motion.span>

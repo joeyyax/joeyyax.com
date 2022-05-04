@@ -42,6 +42,7 @@ const FormTextArea = (
 ) => (
   <div
     className={classNames(
+      "form-thank-you",
       styles.field,
       error && styles.error,
       valid && styles.valid

@@ -82,7 +82,7 @@ const ContactForm = () => {
 
   if (!isSuccess) {
     return (
-      <Form onSubmit={handleSubmit(onSubmit, onError)}>
+      <Form name="contact-form" onSubmit={handleSubmit(onSubmit, onError)}>
         <Form.Row>
           <Form.Column>
             <Controller

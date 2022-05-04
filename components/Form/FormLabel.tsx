@@ -7,7 +7,7 @@ interface Props {
 }
 
 const FormLabel = ({ label, htmlFor, required = false }: Props) => (
-  <label className={styles.label} htmlFor={htmlFor}>
+  <label className={`form-label ${styles.label}`} htmlFor={htmlFor}>
     {label}{" "}
     {required && (
       <span className="text-red-500 uppercase text-xs">Required</span>

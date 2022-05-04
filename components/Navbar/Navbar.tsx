@@ -20,7 +20,7 @@ const Navbar = () => {
       <Section.Container
         stack={false}
         gap="md"
-        className="flex-row gap-8 md:gap-8 lg:gap-8 justify-between items-center overflow-visible"
+        className="flex-row gap-8 md:gap-8 lg:gap-8 py-0 md:py-0 lg:py-0 justify-between items-center overflow-visible"
       >
         <Branding />
         <NavbarTitle />

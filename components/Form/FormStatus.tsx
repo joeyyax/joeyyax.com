@@ -7,7 +7,7 @@ const FormStatus = ({ loading = false, errors = false }: Props) => {
   const hasErrors = Object.keys(errors).length > 0
 
   return (
-    <div className="flex gap-4">
+    <div className="form-status flex gap-4">
       {loading && <span className="text-sm text-gray-600">Loading...</span>}
       {hasErrors && (
         <span className="text-sm text-red-600">

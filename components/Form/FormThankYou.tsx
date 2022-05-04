@@ -36,7 +36,7 @@ const FormThankYou = ({
   children,
 }: Props) => (
   <motion.div
-    className="flex flex-col items-center justify-center gap-4"
+    className="form-success flex flex-col items-center justify-center gap-4"
     variants={motionVariants}
     initial="hidden"
     animate="visible"
